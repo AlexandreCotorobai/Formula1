@@ -1,0 +1,43 @@
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+  color: #fff;
+  background-color: #fd0d0d;
+}
+.nav-link {
+    display: block;
+    padding: 0.5rem 1rem;
+    color: #000000;
+    text-decoration: none;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+}
+.nav-link:hover, .nav-link:focus {
+    color: #fd0d0d;
+}
+.header3{
+    font-size: 1.5em;
+    margin: 1em 0 1em 0;
+    font-weight: bold;
+}
+.header5{
+    font-size: 0.83em;
+    margin: 1.673em 0 1.67em 0;
+    font-weight: bold;
+}
+.header1 {
+    font-size: 2em;
+    margin: 0.67em 0 0.67em 0;
+    font-weight: 500;
+    line-height: 1.2;
+}
+.constructorLabel {
+    font-weight: bold;
+    padding: 1px;
+}
+.newLink {
+    color: rgb(193, 196, 193);
+    background-color: transparent;
+    text-decoration: none;
+}
+.newLink:hover {
+    color: #fd0d0d
+}

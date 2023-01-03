@@ -1,0 +1,125 @@
+﻿body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 70px 0 50px 0;
+}
+
+@media (max-width: 768px){
+    body {
+        font-family: 'Montserrat', sans-serif;
+        margin: 70px 0 0px 0;
+    }
+}
+
+/* Navbar */
+.navbar-btn {
+    /* border-color: #333; */
+    text-transform: uppercase;
+    color: rgb(255, 255, 255) !important;
+    /* background-color: #2b2325; */
+    padding: 23px 23px !important;
+    margin: 0px 0px 0px 0px;
+}
+
+.navbar-btn:hover {
+    color: rgb(255, 0, 0) !important;
+    background-color: #333;
+    border-radius: 10px;
+	font-weight: 500;
+}
+
+#champions:hover {
+    color: rgb(255, 217, 0) !important;
+}
+
+/* Carousel */
+#carouselMain .carousel-caption {
+    bottom: 10%;
+}
+
+/*button carousel
+----------------------*/
+.main-btn {
+    background-color: white;
+    color: black;
+    text-transform: uppercase;
+    width: 200px;
+    height: 60px;
+    padding: 10px 20px;
+    border-radius: 30px;
+    border: 3px solid transparent;
+    transition: .5s;
+    text-decoration: none;
+    border-color: dimgrey;
+}
+
+.main-btn:hover {
+    color: #FFF;
+    background-color: #980000;
+    border-color: transparent;
+}
+
+
+/* button default
+---------------------------- */
+.btn-default {
+    color: rgb(255, 0, 0);
+    background-color: #f8f9fa;
+    border-color: #ccc;
+}
+
+.btn-default:focus {
+    color: #333;
+    background-color: #e6e6e6;
+    border-color: #8c8c8c;
+}
+
+.btn-default:active,
+.btn-default:hover {
+    color: #333;
+    background-color: #e6e6e6;
+    border-color: #adadad;
+}
+
+/* footer */
+footer {
+	background-color: #666;
+	/* height: 600px; */
+	border-top: 5px solid #ff0000;
+	margin-bottom: 0px;
+
+}
+
+footer a:hover .fa-facebook-square{
+    color:#2f007a;
+}
+footer a:hover .fa-instagram{
+    color:#b90066b7;
+}
+footer a:hover .fa-youtube{
+    color:#ff0000b7;
+}
+
+footer h2, footer p, footer a, footer span {
+	color: #D1D1D1;
+}
+
+footer h2 {
+	font-weight: 400;
+}
+
+footer a {
+	text-decoration: none;
+}
+
+/* footer ul {
+	padding: 0;
+} */
+
+footer li {
+	list-style: none;
+}
+
+footer a:hover {
+	color: #FFF;
+}
+

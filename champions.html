@@ -1,0 +1,334 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>ITW 2021/22 - champion Details</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="myCSS.css" />
+    <link rel="stylesheet" href="champions.css" /> 
+    
+</head>
+<body style="margin-bottom: 40px;">
+    <!-- NAVBAR -->
+    <nav style="min-height: 70px;" class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top mb-0">
+        <div class="container">
+            <div class="navbar-collapse collapse w-100 order-1 order-lg-0 dual-collapse2">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item active">
+                        <a class="navbar-btn nav-link" href="drivers.html">Drivers</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="navbar-btn nav-link" href="constructors.html">Constructors</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="navbar-btn nav-link" href="circuits.html">Circuits</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="mx-auto order-0">
+                <a class="logo-btn navbar-brand mx-auto" href="index.html">
+                    <img style="height: 70px;" src=".\Images\F1 Formula 1.png" />
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".dual-collapse2">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+            <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a id="champions" class="navbar-btn nav-link" href="champions.html">Champions</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="countries" class="navbar-btn nav-link" href="countries.html">Countries</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="navbar-btn nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Info</a>
+                        <ul class="dropdown-menu bg-dark">
+                            <li><a class="navbar-btn nav-link dropdown-item" href="nationalities.html">Nationalities</a></li>
+                            <li><a class="navbar-btn nav-link dropdown-item" href="aboutus.html">About Us</a></li>
+                            
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Work Area-->
+    <div class="container pt-4 pb-2 mb-3">
+        <div class="accordion accordion-flush" id="accordionExample">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button text-center" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"><span><i id="setadireita" class="fa fa-chevron-right"></i><i id="setabaixo" class="fa fa-chevron-down d-none"></i> 1950s<br></span></button>
+                </h2>
+            </div>
+            <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <div data-bind="foreach:records" class="row">
+                        <!-- ko if: Year < 1960 -->
+                        <div class="card">
+                            <div class="content">
+                                <!-- <span class="position-absolute top-0 start-100"><i style="color: yellow;" class="fa fa-5x fa-trophy"></i></span> -->
+                                <div class="imgBx">
+                                    <!-- ko if: ImageUrl != null -->
+                                    <img data-bind="attr: {alt: DriverName, src: ImageUrl}" class="card-img-top" alt="F1 Formula 1">
+                                    <!-- /ko -->
+                                    <!-- ko if: ImageUrl == null -->
+                                    <img src="Images\default-pfp.png" />
+                                    <!-- /ko -->
+                                </div>
+                                <div class="contentBx">
+                                    <h3 data-bind="text:DriverName"></h3>
+                                </div>
+                            </div>
+                            <div class="sci text-center" data-bind="html:'Points: '+ Points + '<br> Year: ' + Year"></div>
+                        </div>
+                        <!-- /ko -->
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button text-center" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo"><span><i class="fa fa-chevron-right"></i> 1960s</span></button>
+                </h2>
+            </div>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <div data-bind="foreach:records" class="row hr">
+                        <!-- ko if: Year < 1970 && Year >= 1960 -->
+                        <div class="card">
+                            <div class="content">
+                                <div class="imgBx">
+                                    <!-- ko if: ImageUrl != null -->
+                                    <img data-bind="attr: {alt: DriverName, src: ImageUrl}" class="card-img-top" alt="F1 Formula 1">
+                                    <!-- /ko -->
+                                    <!-- ko if: ImageUrl == null -->
+                                    <img src="Images\default-pfp.png" />
+                                    <!-- /ko -->
+                                </div>
+                                <div class="contentBx">
+                                    <h3 data-bind="text:DriverName"></h3>
+                                </div>
+                            </div>
+                            <div class="sci text-center" data-bind="html:'Points: '+ Points + '<br> Year: ' + Year"></div>
+                        </div>
+                        <!-- /ko -->
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingThree">
+                    <button class="accordion-button text-center" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree"><span><i class="fa fa-chevron-right"></i> 1970s</span></1970s></button>
+                </h2>
+            </div>
+            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <div data-bind="foreach:records" class="row">
+                        <!-- ko if: Year < 1980 && Year >= 1970 -->
+                        <div class="card">
+                            <div class="content">
+                                <div class="imgBx">
+                                    <!-- ko if: ImageUrl != null -->
+                                    <img data-bind="attr: {alt: DriverName, src: ImageUrl}" class="card-img-top" alt="F1 Formula 1">
+                                    <!-- /ko -->
+                                    <!-- ko if: ImageUrl == null -->
+                                    <img src="Images\default-pfp.png" />
+                                    <!-- /ko -->
+                                </div>
+                                <div class="contentBx">
+                                    <h3 data-bind="text:DriverName"></h3>
+                                </div>
+                            </div>
+                            <div class="sci text-center" data-bind="html:'Points: '+ Points + '<br> Year: ' + Year"></div>
+                        </div>
+                        <!-- /ko -->
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingFour">
+                    <button class="accordion-button text-center" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour"><span><i class="fa fa-chevron-right"></i> 1980s</span></1970s></button>
+                </h2>
+            </div>
+            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <div data-bind="foreach:records" class="row">
+                        <!-- ko if: Year < 1990 && Year >= 1980 -->
+                        <div class="card">
+                            <div class="content">
+                                <div class="imgBx">
+                                    <!-- ko if: ImageUrl != null -->
+                                    <img data-bind="attr: {alt: DriverName, src: ImageUrl}" class="card-img-top" alt="F1 Formula 1">
+                                    <!-- /ko -->
+                                    <!-- ko if: ImageUrl == null -->
+                                    <img src="Images\default-pfp.png" />
+                                    <!-- /ko -->
+                                </div>
+                                <div class="contentBx">
+                                    <h3 data-bind="text:DriverName"></h3>
+                                </div>
+                            </div>
+                            <div class="sci text-center" data-bind="html:'Points: '+ Points + '<br> Year: ' + Year"></div>
+                        </div>
+                        <!-- /ko -->
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingFive">
+                    <button class="accordion-button text-center" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="true" aria-controls="collapseFive"><span><i class="fa fa-chevron-right"></i> 1990s</span></1970s></button>
+                </h2>
+            </div>
+            <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <div data-bind="foreach:records" class="row">
+                        <!-- ko if: Year < 2000 && Year >= 1990 -->
+                        <div class="card">
+                            <div class="content">
+                                <div class="imgBx">
+                                    <!-- ko if: ImageUrl != null -->
+                                    <img data-bind="attr: {alt: DriverName, src: ImageUrl}" class="card-img-top" alt="F1 Formula 1">
+                                    <!-- /ko -->
+                                    <!-- ko if: ImageUrl == null -->
+                                    <img src="Images\default-pfp.png" />
+                                    <!-- /ko -->
+                                </div>
+                                <div class="contentBx">
+                                    <h3 data-bind="text:DriverName"></h3>
+                                </div>
+                            </div>
+                            <div class="sci text-center" data-bind="html:'Points: '+ Points + '<br> Year: ' + Year"></div>
+                        </div>
+                        <!-- /ko -->
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingSix">
+                    <button class="accordion-button text-center" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="true" aria-controls="collapseSix"><span><i class="fa fa-chevron-right"></i> 2000s</span></1970s></button>
+                </h2>
+            </div>
+            <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <div data-bind="foreach:records" class="row">
+                        <!-- ko if: Year < 2010 && Year >= 2000 -->
+                        <div class="card">
+                            <div class="content">
+                                <div class="imgBx">
+                                    <!-- ko if: ImageUrl != null -->
+                                    <img data-bind="attr: {alt: DriverName, src: ImageUrl}" class="card-img-top" alt="F1 Formula 1">
+                                    <!-- /ko -->
+                                    <!-- ko if: ImageUrl == null -->
+                                    <img src="Images\default-pfp.png" />
+                                    <!-- /ko -->
+                                </div>
+                                <div class="contentBx">
+                                    <h3 data-bind="text:DriverName"></h3>
+                                </div>
+                            </div>
+                            <div class="sci text-center" data-bind="html:'Points: '+ Points + '<br> Year: ' + Year"></div>
+                        </div>
+                        <!-- /ko -->
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingEight">
+                    <button class="accordion-button text-center" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="true" aria-controls="collapseEight"><span><i class="fa fa-chevron-right"></i> 2010s</span></1970s></button>
+                </h2>
+            </div>
+            <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingEight" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <div data-bind="foreach:records" class="row">
+                        <!-- ko if: Year < 2020 && Year >= 2010 -->
+                        <div class="card">
+                            <div class="content">
+                                <div class="imgBx">
+                                    <!-- ko if: ImageUrl != null -->
+                                    <img data-bind="attr: {alt: DriverName, src: ImageUrl}" class="card-img-top" alt="F1 Formula 1">
+                                    <!-- /ko -->
+                                    <!-- ko if: ImageUrl == null -->
+                                    <img src="Images\default-pfp.png" />
+                                    <!-- /ko -->
+                                </div>
+                                <div class="contentBx">
+                                    <h3 data-bind="text:DriverName"></h3>
+                                </div>
+                            </div>
+                            <div class="sci text-center" data-bind="html:'Points: '+ Points + '<br> Year: ' + Year"></div>
+                        </div>
+                        <!-- /ko -->
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingNine">
+                    <button class="accordion-button text-center" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNine" aria-expanded="true" aria-controls="collapseNine"><span><i class="fa fa-chevron-right"></i> 2020s</span></1970s></button>
+                </h2>
+            </div>
+            <div id="collapseNine" class="accordion-collapse collapse" aria-labelledby="headingNine" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <div data-bind="foreach:records" class="row">
+                        <!-- ko if: Year < 2030 && Year >= 2020 -->
+                        <div class="card">
+                            <div class="content">
+                                <div class="imgBx">
+                                    <!-- ko if: ImageUrl != null -->
+                                    <img data-bind="attr: {alt: DriverName, src: ImageUrl}" class="card-img-top" alt="F1 Formula 1">
+                                    <!-- /ko -->
+                                    <!-- ko if: ImageUrl == null -->
+                                    <img src="Images\default-pfp.png" />
+                                    <!-- /ko -->
+                                </div>
+                                <div class="contentBx">
+                                    <h3 data-bind="text:DriverName"></h3>
+                                </div>
+                            </div>
+                            <div class="sci text-center" data-bind="html:'Points: '+ Points + '<br> Year: ' + Year"></div>
+                        </div>
+                        <!-- /ko -->
+                    </div>
+                </div>
+            </div>
+        </div>  
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header bg-dark text-light">
+                    <h5 class="modal-title" id="exampleModalLabel">
+                        <img src="./Images/F1 Formula 1.png" height="30" /> Loading data...
+                    </h5>
+                </div>
+                <div class="modal-body text-center">
+                    <i class="fa fa-spin fa-3x fa-refresh"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End of Work Area -->
+    <nav id="bnav" style="height:50px;" class="navbar d-none d-md-block navbar-light bg-light fixed-bottom">
+        <div class="container small">
+            <div class="navbar-text">&copy;  Introdução as Tecnologias Web - 2021/22</div>
+            <div class="navbar-text">Made by <a href="mailto:alexandrecotorobai@ua.pt" class="text-decoration-none text-muted">Alexandre Cotorobai</a> and <a href="mailto:joao.dourado1@ua.pt" class="text-decoration-none text-muted">João Dourado</a>.</div>
+            <div class="navbar-nav">
+                <div class="nav-item text-end"><a href="https://www.ua.pt" class="nav-link">Universidade de Aveiro</a></div>
+            </div>
+        </div>
+    </nav>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js " integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p " crossorigin="anonymous "></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.1/knockout-latest.js "></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js " integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin=" anonymous "></script>
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js " integrity="sha256-hlKLmzaRlE8SCJC1Kw8zoUbU8BxA+8kR3gseuKfMjxA=" crossorigin=" anonymous "></script>
+    <script src="champions.js"></script>
+</body>
+</html>

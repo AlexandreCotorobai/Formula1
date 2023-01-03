@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>ITW 2021/22 - Circuit Details</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="myCSS.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+   integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+   crossorigin=""/>
+   <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+   integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+   crossorigin=""></script>
+    <style>
+        .panel {
+            margin-bottom: 15px;
+            border: 1px solid #eeeeef;
+            box-shadow: 0 1px 1px 0 rgb(0 0 0 / 10%);
+        }
+        .panelheader-light {
+            background-color: #dc0e0e;
+        }
+        .panel-header {
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            padding: 15px 16px;
+            min-height: 50px;
+            background-size: auto 100%;
+            background-repeat: no-repeat;
+        }
+        #titleDiv {
+            background-color: rgba(33,37,41,255);
+            padding: 32px;
+            color: white;
+            max-height: 200px;
+        }
+        .backgroundimg {
+            height: 100%;
+            width: 100%;
+            max-width: 100%;
+            max-height: 100%;
+            box-sizing: border-box;
+            opacity: .6;
+            filter: saturate(0);
+            mix-blend-mode: soft-light;
+            background-size: contain;
+        }
+        .panel-content {
+            border: 1px solid rgb(255, 255, 255);
+        }
+        #infoTable tr td:nth-child(1){
+            font-weight: bold;
+            color: #7d7d7d;
+            font-size: .8125rem;
+        }
+        #infoTable tr td:nth-child(2){
+            color: #e6e6e6;
+            font-size: .8125rem;
+        }
+        .infoHead {
+            z-index: 1;
+            margin-bottom: 0;
+            font-size: 1.125rem;
+            color: #fff;
+        }
+        .rightDiv {
+            float: right;
+            border: 1px black;
+            border-style: solid;
+            padding: 10px;
+        }
+        #map { height: 300px; }
+        #header3{
+            font-size: 1.5em;
+            margin: 1em 0 1em 0;
+            font-weight: bold;
+        }
+        #header5{
+            font-size: 0.83em;
+            margin: 1.673em 0 1.67em 0;
+            font-weight: bold;
+        }
+        #header1 {
+            font-size: 2em;
+            margin: 0.67em 0 0.67em 0;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVBAR -->
+    <nav style="min-height: 70px;" class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top mb-0">
+        <div class="container">
+            <div class="navbar-collapse collapse w-100 order-1 order-lg-0 dual-collapse2">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item active">
+                        <a class="navbar-btn nav-link" href="drivers.html">Drivers</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="navbar-btn nav-link" href="constructors.html">Constructors</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="navbar-btn nav-link" href="circuits.html">Circuits</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="mx-auto order-0">
+                <a class="logo-btn navbar-brand mx-auto" href="index.html">
+                    <img style="height: 70px;" src=".\Images\F1 Formula 1.png" />
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".dual-collapse2">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+            <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a id="champions" class="navbar-btn nav-link" href="champions.html">Champions</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="countries" class="navbar-btn nav-link" href="countries.html">Countries</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="navbar-btn nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Info</a>
+                        <ul class="dropdown-menu bg-dark">
+                            <li><a class="navbar-btn nav-link dropdown-item" href="nationalities.html">Nationalities</a></li>
+                            <li><a class="navbar-btn nav-link dropdown-item" href="aboutus.html">About Us</a></li>
+                            
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Work Area-->
+    <div class="container" style="margin-top: 100px;">
+        <div class="row mb-3" id="titleDiv">
+            <!-- <img src="https://cdn.racingnews365.com/transforms/default/50516/AP-1XG1RH6992111_news_2de1fe545d1b9ebdddb887bf39417f7d.jpg"alt="F1 Cars" class="backgroundimg"> -->
+            <div class="col-mb-4 col-lg-4 col-sm-12" style="float:left">
+                <span id="header1" data-bind="text:Name"></span>
+            </div>
+            <div class="col-mb-8 col-lg-8 col-sm-12" style="float:right">
+                <span id="header3" data-bind="text: Location()"></span><span id="header5" data-bind="text: ' , ' + Country()"></span>
+            </div>
+        </div>
+        <div class="col-lg-7 col-md-7 col-12 col-sm-12 rightDiv">
+            <header></header>
+            <img data-bind="attr : {src: ImageUrl }" class="img-fluid" tltle="Circuit Layout"alt="Responsive image">
+        </div>
+        <div class="col-lg-7 col-md-7 col-12 col-sm-12 rightDiv"  style="margin-bottom: 50px;">
+            <div id="map">
+
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-12 col-sm-12">
+            <div class="panelheader-light panel-header infoHead">Status</div>
+            <div class="panel-content">
+                <table class="table table-hover table-dark" id="infoTable">
+                    <tbody>
+                        <tr>
+                            <td>Name</td>
+                            <td data-bind="text: Name()"></td>
+                        </tr>
+                        <tr>
+                            <td>Races Held</td>
+                            <td data-bind="text: Races().length"></td>
+                        </tr>
+                        <tr>
+                            <td>First Held</td>
+                            <td data-bind="text: firstHeld()"></td>
+                        </tr>
+                        
+                        <tr>
+                            <td>Location</td>
+                            <td data-bind="text: Location() + ', ' + Country()"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="panelheader-light panel-header infoHead">Races Held</div>
+            <div class="panel-content" style="border: 1px black; max-height: 400px; overflow: auto;">
+                <table class="table table-hover table-dark">
+                    <tbody data-bind="foreach: Races" class="infoTable" >
+                        <tr>
+                            <td><a class="text-decoration-none text-muted" data-bind="text: Year, attr: { href: './raceDetails.html?id=' + RaceId }"></a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header bg-dark text-light">
+                    <h5 class="modal-title" id="exampleModalLabel">
+                        <img src="./Images/F1 Formula 1.png" height="30" /> Loading data...
+                    </h5>
+                </div>
+                <div class="modal-body text-center">
+                    <i class="fa fa-spin fa-3x fa-refresh"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End of Work Area -->
+    <nav id="bnav" style="height:50px;" class="navbar d-none d-md-block navbar-light bg-light fixed-bottom">
+        <div class="container small">
+            <div class="navbar-text">&copy;  Introdução as Tecnologias Web - 2021/22</div>
+            <div class="navbar-text">Made by <a href="mailto:alexandrecotorobai@ua.pt" class="text-decoration-none text-muted">Alexandre Cotorobai</a> and <a href="mailto:joao.dourado1@ua.pt" class="text-decoration-none text-muted">João Dourado</a>.</div>
+            <div class="navbar-nav">
+                <div class="nav-item text-end"><a href="https://www.ua.pt" class="nav-link">Universidade de Aveiro</a></div>
+            </div>
+        </div>
+    </nav>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js " integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p " crossorigin="anonymous "></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.1/knockout-latest.js "></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js " integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin=" anonymous "></script>
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js " integrity="sha256-hlKLmzaRlE8SCJC1Kw8zoUbU8BxA+8kR3gseuKfMjxA=" crossorigin=" anonymous "></script>
+    <script src="circuitDetails.js"></script>
+</body>
+</html>
