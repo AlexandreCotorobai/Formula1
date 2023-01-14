@@ -1,8 +1,8 @@
 # ITW_project-formula1
 
 Done by:
-Alexandre Cotorobai 107849
-João Dourado
+  - Alexandre Cotorobai 107849
+  - João Dourado 108636
 
 Grade: 17.5
 
