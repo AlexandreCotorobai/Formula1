@@ -7,3 +7,4 @@ Done by:
 Grade: 17.5
 
 Site: https://alexandrecotorobai.github.io/ITW_project-formula1/
+(Only 100% functional on UA's network)
